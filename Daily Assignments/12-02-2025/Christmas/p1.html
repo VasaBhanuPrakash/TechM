@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let now=new Date();
+        let christmas=new Date(now.getFullYear(),11,25);
+        if(now>christmas){
+            christmas.setFullYear(christmas.getFullYear+1);
+        }
+        let diff=christmas-now;
+        document.write(`Days left for Christmas: ${Math.ceil(diff/(1000*60*60*24))}`);
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

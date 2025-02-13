@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotate String</title>
+</head>
+<body>
+    <h2>Rotate a String</h2>
+    <input type="text" id="userInput" placeholder="Enter a string">
+    <button onclick="startRotation()">Start Rotation</button>
+    <h3 id="rotatedText"></h3>
+    <script>
+        let intervalId;
+        function rotateString() {
+            let textElement = document.getElementById("rotatedText");
+            let str = textElement.innerText;
+            if (str.length > 1) {
+                let lastChar = str.slice(-1);
+                let newStr = lastChar + str.slice(0, -1);
+                textElement.innerText = newStr;
+            }
+        }
+        function startRotation() {
+            let userInput = document.getElementById("userInput").value;
+            if (!userInput) {
+                alert("Please enter a string!");
+                return;
+            }
+            document.getElementById("rotatedText").innerText = userInput;
+            clearInterval(intervalId);
+            intervalId = setInterval(rotateString, 500);
+        }
+    </script>
+</body>
+</html>

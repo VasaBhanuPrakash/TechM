@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function degree(){
+            let s = document.getElementById("temp").value.trim();
+            if (s.slice(-1).toUpperCase() === "C") 
+            { 
+                let x = parseFloat(s.slice(0, -1));
+                let y = ((x*9/5)+32).toFixed(2);
+                let newDiv = document.createElement("div");
+                newDiv.innerHTML = `
+                <p>${x} is ${y}&deg;F</p>
+                `;
+                document.body.appendChild(newDiv);
+            }
+            else{
+                let x = parseFloat(s.slice(0, -1));
+                let y = ((x-32)*9/5).toFixed(2);
+                let newDiv = document.createElement("div");
+                newDiv.innerHTML = `
+                <p>${x} is ${y}&deg;C</p>
+                `;
+                document.body.appendChild(newDiv);
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>Tempurature:</p>
+    <input type="text" id="temp"/>
+    <button onclick="degree()">Convert</button>
+</body>
+</html>
