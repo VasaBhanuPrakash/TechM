@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Registration</title>
+    <script>
+        function fun() {
+            let name1 = document.getElementById("Name").value;
+            let date1 = document.getElementById("Mandate").value;
+            let stock = document.querySelector('input[name="stock"]:checked');
+            let location = document.getElementById("location").value;
+            let stock1 = stock ? "Available" : "Out Of Stock";
+            let date = new Date(date1);
+            let newDiv = document.createElement("div");
+            newDiv.id = "displayDiv";
+            newDiv.style.cssText = "border: 2px solid; border-radius: 20px; width: 250px; margin: 20px; padding: 20px; position: absolute; top: 20px; left: 400px; background-color: lightgray;";
+            newDiv.innerHTML = `
+                <p style="background-color:blue; color:white;padding:5px;">Name</p>
+                <p>${name1}</p>
+                <p style="background-color:blue; color:white;padding:5px;">Manufactured</p>
+                <p>${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}</p>
+                <p style="background-color:blue; color:white;padding:5px;">Stock</p>
+                <p>${stock1}</p>
+                <p style="background-color:blue; color:white;padding:5px;">Location</p>
+                <p>${location}</p>
+                <button onclick="fun2()">Close</button>
+            `;
+
+            document.body.appendChild(newDiv);
+        }
+
+        function fun2() {
+            let div = document.getElementById("displayDiv");
+            if (div) {
+                div.remove();
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div style="border: 2px solid;border-radius: 20px; width: 250px; margin: 20px;padding: 20px;">
+        <h3>Register Product</h3>
+        <p>Name</p>
+        <input type="text" id="Name">
+        <p>Manufactured</p>
+        <input type="date" id="Mandate">
+        <p>Is in stock</p>
+        <input type="radio" name="stock" value="yes"> Yes 
+        <input type="radio" name="stock" value="no"> No
+        <p>Shipped To</p>
+        <select id="location">
+            <option value="Hyderabad">Hyderabad</option>
+            <option value="Delhi">Delhi</option>
+        </select>
+        <br><br>
+        <button onclick="fun()">Submit</button>
+    </div>
+
+</body>
+</html>

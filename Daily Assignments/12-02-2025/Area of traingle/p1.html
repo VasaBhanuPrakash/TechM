@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function area(){
+            let x=parseInt(document.getElementById("fside").value);
+            let y=parseInt(document.getElementById("sside").value);
+            let z=parseInt(document.getElementById("tside").value);
+            let s=(x+y+z)/2;
+            let a=Math.sqrt(s*(s-x)*(s-y)*(s-z));
+            document.write(a);
+        }
+    </script>
+</head>
+<body>
+    <p>Enter the value of first side of the triangle</p>
+    <input type="text" id="fside">
+    <p>Enter the value of second side of the triangle</p>
+    <input type="text" id="sside">
+    <p>Enter the value of third side of the triangle</p>
+    <input type="text" id="tside">
+    <button onclick="area()">Area of triangle</button>
+</body>
+</html>

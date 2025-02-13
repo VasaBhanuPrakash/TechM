@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script defer src="s1.js"></script>
+</head>
+<body>
+    <h1>Login</h1>
+    
+    <p>User Name</p>
+    <input type="text" id="username">
+    
+    <p>Password</p>
+    <input type="password" id="password">
+    
+    <p>Verify Code</p>
+    <input type="text" id="userCode" placeholder="Enter code">
+    
+    <p id="generatedCode"></p>
+    
+    <button onclick="generateCode()">New Code</button>
+    
+    <p id="result"></p>
+</body>
+</html>
