@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="MavenProjectWizardLocationPage">
+		<list key="location">
+			<item value="C:\Users\VASA BHANU PRAKASH\eclipse-workspace\TechM\TechM\Daily Assignments\15-02-2025\Shopping-application\src\main\java\org\bhanu\DisplayDetails.java"/>
+			<item value="C:\Users\VASA BHANU PRAKASH\eclipse-workspace\TechM\TechM\Daily Assignments\15-02-2025\Inventory\src\main\java\org\bhanu\DisplayDetails.java"/>
+			<item value="C:\Users\VASA BHANU PRAKASH\eclipse-workspace\TechM\TechM\Daily Assignments\15-02-2025\Loan\src\main\java\org\bhanu\DisplayDetails.java"/>
+			<item value="C:\Users\VASA BHANU PRAKASH\eclipse-workspace\TechM\TechM\Daily Assignments\15-02-2025\Student-details\src\main\java\org\bhanu\DisplayDetails.java"/>
+			<item value="C:\Users\VASA BHANU PRAKASH\eclipse-workspace\TechM\TechM\Daily Assignments\15-02-2025\simple-spring-project\pom.xml"/>
+			<item value="C:\Users\VASA BHANU PRAKASH\eclipse-workspace\TechM\TechM\Daily Assignments\15-02-2025\simple-spring-project\src\main\resources\config.xml"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArchetypePage">
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+	</section>
+	<section name="Maven2ProjectWizardArchifactPage">
+		<list key="package">
+		</list>
+		<list key="groupId">
+		</list>
+		<list key="artifactId">
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="MavenProjectWizardArtifactPage">
+		<list key="groupId">
+			<item value="org.bhanu"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="Items-Applications"/>
+			<item value="Shopping-Application"/>
+			<item value="Shopping-application"/>
+			<item value="Inventory"/>
+			<item value="Loan"/>
+			<item value="Student-details"/>
+			<item value="Spring-project-with-jdbc"/>
+			<item value="simple-spring-project"/>
+		</list>
+		<list key="projectNameTemplate">
+			<item value="[artifactId]"/>
+			<item value="[artifactId]-TRUNK"/>
+			<item value="[artifactId]-[version]"/>
+			<item value="[groupId].[artifactId]"/>
+			<item value="[groupId].[artifactId]-[version]"/>
+			<item value="[name]"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
+	<section name="org.eclipse.m2e.core.pom.overview">
+	</section>
+	<section name="org.eclipse.m2e.core.pom.dependencies">
+	</section>
+</section>
