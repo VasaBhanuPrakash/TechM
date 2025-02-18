@@ -1,0 +1,17 @@
+package org.bhanu;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+public class Employee {
+    public static void main(String[] args) {
+        // Load Spring Configuration File
+        ApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+
+        // Get the bean
+        Empdetails emp = (Empdetails) context.getBean("empBean");
+
+        // Display Employee Details
+        emp.display();
+    }
+}
