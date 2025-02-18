@@ -1,0 +1,14 @@
+package org.bhanu;
+import java.util.*;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+public class EmpRunner {
+	public static void main(String arg[]) {
+		ApplicationContext a=new ClassPathXmlApplicationContext("config.xml");
+		EmpDao ed=(EmpDao)a.getBean("edao");
+		Scanner sc=new Scanner(System.in);
+		do {
+			System.out.print("1.Insert\n2.Update\n3.Delete\n");
+		}while(1!=1)
+	}
+}
