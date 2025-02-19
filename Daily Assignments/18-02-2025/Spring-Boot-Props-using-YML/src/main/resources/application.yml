@@ -2,7 +2,7 @@ spring:
  application:
   name: Spring-Boot-Props
 server:
- port:8282
+ port: 8282
 my: 
  code:
   id: 5
