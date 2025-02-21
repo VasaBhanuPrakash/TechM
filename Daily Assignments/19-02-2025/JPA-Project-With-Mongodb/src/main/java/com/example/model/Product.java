@@ -4,27 +4,23 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import jakarta.persistence.Id;
 
-@Document
+@Document(collection="food")
 public class Product {
 	@Id
-	private Integer id;
+	private String id;
 	private String name;
-	private int sal;
+	private double price;
 	public Product() {
 		super();
 	}
-	public Product(Integer id) {
-		super();
-		this.id=id;
-	}
-	public Product(String name,int sal) {
+	public Product(String name,double price) {
 		this.name=name;
-		this.sal=sal;
+		this.price=price;
 	}
-	public Integer getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(Integer id) {
+	public void setId(String id) {
 		this.id=id;
 	}
 	public String getName() {
@@ -33,13 +29,13 @@ public class Product {
 	public void setName(String name) {
 		this.name=name;
 	}
-	public int setSal() {
-		return sal;
+	public double getPrice() {
+		return price;
 	}
-	public void setSal(int sal) {
-		this.sal=sal;
+	public void setPrice(double price) {
+		this.price=price;
 	}
 	public String toString() {
-		return "Product[ID:"+id+", Name:"+name+", Salary:"+sal+"]";
+		return "Product[ID:"+id+", Name:"+name+", Price:"+price+"]";
 	}
 }

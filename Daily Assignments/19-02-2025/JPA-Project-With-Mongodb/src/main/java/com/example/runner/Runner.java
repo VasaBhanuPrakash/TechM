@@ -20,26 +20,26 @@ public class Runner implements CommandLineRunner {
 			System.out.print("Enter your choice: ");
 			switch(sc.nextInt()) {
 			case 1:{
-				System.out.print("Enter name of the Employee");
+				System.out.print("Enter name of the food");
 				String name=sc.next();
-				System.out.print("Enter salary of the Employee");
-				int sal=sc.nextInt();
-				repo.save(new Product(name,sal));
+				System.out.print("Enter price of the food");
+				int price=sc.nextInt();
+				repo.save(new Product(name,price));
 				break;
 			}
 			case 2:{;
-				System.out.println("Enter ID of the Employee whose data has to be updated");
-				Optional<Product> y=repo.findById(sc.nextInt());
+				System.out.println("Enter ID of the Food whose data has to be updated");
+				Optional<Product> y=repo.findById(sc.next());
 				if(y.isPresent()) {
 					Product p = y.get();
-					System.out.print("Enter Name of the Employee");
+					System.out.print("Enter Name of the food");
 					p.setName(sc.next());
-					System.out.print("Enter Salary of the Employee");
-					p.setSal(sc.nextInt());
+					System.out.print("Enter price of the food");
+					p.setPrice(sc.nextInt());
 					repo.save(p);
 				}
 				else {
-					System.out.println("No Employee with this ID");
+					System.out.println("No food with this ID");
 				}
 				break;
 			}
@@ -48,8 +48,8 @@ public class Runner implements CommandLineRunner {
 				break;
 			}
 			case 4:{
-				System.out.println("Enter the ID of Emmployee whose data has to be displayed");
-				Optional<Product> x = repo.findById(sc.nextInt());
+				System.out.println("Enter the ID of food which data has to be displayed");
+				Optional<Product> x = repo.findById(sc.next());
 				if(x.isPresent()) {
 					System.out.println(x.get());
 				}
@@ -59,8 +59,8 @@ public class Runner implements CommandLineRunner {
 				break;
 			}
 			case 5:{
-				System.out.println("Enter ID of the Employee whose data has to be deleted");
-				int x = sc.nextInt();
+				System.out.println("Enter ID of the food which data has to be deleted");
+				String x = sc.next();
 				if(repo.findById(x).isPresent()) {
 					repo.deleteById(x);
 				}
@@ -75,6 +75,7 @@ public class Runner implements CommandLineRunner {
 			}
 			case 7:{
 				System.out.println("Thank you");
+				sc.close();
 				return;
 			}
 			default:{
