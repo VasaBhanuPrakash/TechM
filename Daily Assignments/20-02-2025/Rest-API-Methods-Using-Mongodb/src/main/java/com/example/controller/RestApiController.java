@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,7 +26,7 @@ public class RestApiController {
 		return repo.findAll();
 	}
 	@GetMapping("/readAny/{id}")
-	public EmpDetails getAny(long id) {
+	public EmpDetails getAny(@PathVariable Integer id) {
 		Optional<EmpDetails> y = repo.findById(id);
 		if(y.isPresent()) {
 			return y.get();
@@ -45,14 +46,14 @@ public class RestApiController {
 		return "message: Data is updated";
 	}
 	@DeleteMapping("/delete/{id}")
-	public String deleteAny(long id) {
+	public String deleteAny(@PathVariable Integer id) {
 		Optional<EmpDetails> y = repo.findById(id);
 		if(y.isPresent()) {
 			repo.deleteById(id);
 			return "message: Data with the id "+id+" is deleted";
 		}
 		else {
-			return "THere is no data with the id "+id; 
+			return "There is no data with the id "+id; 
 		}
 	}
 	@DeleteMapping("delete")
