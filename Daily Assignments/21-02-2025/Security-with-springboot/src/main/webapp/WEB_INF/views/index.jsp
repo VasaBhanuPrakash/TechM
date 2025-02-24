@@ -1,11 +1,18 @@
-<!Doctype html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <html>
 <head>
-<title>Home</title>
+    <title>Login Page</title>
 </head>
 <body>
-	<h2>Hello ${pageContext.request.userPrincipal.name},</h2>
-	<h3>Welcome to Security in Spring Boot!</h3>
-	<a href="<c:url value='/logout'/>">Click here to log out</a>
+    <h2>Login</h2>
+    <form method="post" action="login">
+        <label>Username:</label>
+        <input type="text" name="username" required>
+        <br>
+        <label>Password:</label>
+        <input type="password" name="password" required>
+        <br>
+        <button type="submit">Login</button>
+    </form>
 </body>
 </html>
