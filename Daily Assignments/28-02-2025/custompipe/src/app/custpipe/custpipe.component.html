@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Electricity Bill Calculator</title>
+</head>
+<body>
+    <form (ngSubmit)="details()">
+        <h2>Electricity Bill</h2>
+        <label>Consumer Name:</label>&nbsp; 
+        <input type="text" name="userName" id="userName" [(ngModel)]="userName"/>
+        <br>
+        <label>Meter No:</label>&nbsp;&nbsp;
+        <input type="text" id="value" name="value" [(ngModel)]="MeterNo"/>
+        <br>
+        <label>Electricity Consumed:</label>&nbsp;&nbsp;
+        <input type="text" id="value" name="value" [(ngModel)]="value"/>
+        <br>
+        <label for="type">Type of Consumer:</label>&nbsp;&nbsp;
+        <br>
+        <input type="radio" id="type" name="type" [(ngModel)]="type" value="Home"/>Home
+        <input type="radio" id="type" name="type" [(ngModel)]="type" value="Industry"/>Industry
+        <br>
+        <input type="submit" value="Submit">    
+    </form>
+    <h3>Electricity Bill: {{ value | ElectricBill:type }}</h3>
+</body>
+</html>

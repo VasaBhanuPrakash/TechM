@@ -1,0 +1,66 @@
+<h2>Reactive Form using FormBuilder</h2>
+<div>
+  <form [formGroup]="signupForm" (ngSubmit)="registerUser()">
+    <table style="width: 60%;" cellpadding="5" cellspacing="5">
+
+      <!-- User Name -->
+      <tr>
+        <td style="width: 40%;">
+          <label for="userName">User Name</label>
+        </td>
+        <td>
+          <input type="text" id="userName" formControlName="userName">
+          <div [hidden]="signupForm.get('userName')?.valid || !signupForm.get('userName')?.touched" style="color: red;">
+            <div [hidden]="!signupForm.get('userName')?.errors?.['required']">User name is required</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- Email -->
+      <tr>
+        <td style="width: 40%;">
+          <label for="email">Email</label>
+        </td>
+        <td>
+          <input type="email" id="email" formControlName="email">
+          <div [hidden]="signupForm.get('email')?.valid || !signupForm.get('email')?.touched" style="color: red;">
+            <div [hidden]="!signupForm.get('email')?.errors?.['required']">Email is required</div>
+            <div [hidden]="!signupForm.get('email')?.errors?.['email']">Enter a valid email</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- Date of Birth -->
+      <tr>
+        <td style="width: 40%;">
+          <label for="dob">Date Of Birth</label>
+        </td>
+        <td>
+          <input type="date" id="dob" formControlName="dob">
+        </td>
+      </tr>
+
+      <!-- Password -->
+      <tr>
+        <td style="width: 40%;">
+          <label for="password">Password</label>
+        </td>
+        <td>
+          <input type="password" id="password" formControlName="password">
+          <div [hidden]="signupForm.get('password')?.valid || !signupForm.get('password')?.touched" style="color: red;">
+            <div [hidden]="!signupForm.get('password')?.errors?.['required']">Password is required</div>
+            <div [hidden]="!signupForm.get('password')?.errors?.['minlength']">Minimum 6 characters required</div>
+          </div>
+        </td>
+      </tr>
+
+      <!-- Submit Button -->
+      <tr>
+        <td colspan="2" align="center">
+          <input type="submit" value="Register" [disabled]="signupForm.invalid">
+        </td>
+      </tr>
+
+    </table>
+  </form>
+</div>
