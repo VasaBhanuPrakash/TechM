@@ -1,0 +1,66 @@
+/* Center the content beautifully */
+div[align="center"] {
+  background: linear-gradient(135deg, #1e3c72, #2a5298); /* Stunning gradient */
+  color: #fff; /* White text for contrast */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 500px;
+  margin: 40px auto;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Styling for headings */
+h2 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  background: -webkit-linear-gradient(45deg, #ffcc00, #ff6600);
+  -webkit-background-clip: text; /* Safari & Chrome */
+  -moz-background-clip: text; /* Firefox */
+  -o-background-clip: text; /* Opera */
+  -ms-background-clip: text; /* Edge (older versions) */
+  background-clip: text; /* Standard */
+  -webkit-text-fill-color: transparent;
+}
+
+/* Sub-heading */
+h3 {
+  font-size: 20px;
+  margin-top: 15px;
+  color: #ffdd57;
+}
+
+/* Style for transactions list */
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+}
+
+li {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 500;
+  transition: transform 0.3s, background 0.3s;
+}
+
+/* Add hover effect */
+li:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+/* No transactions message */
+p {
+  font-size: 18px;
+  font-style: italic;
+  color: #ffcc00;
+  margin-top: 10px;
+}

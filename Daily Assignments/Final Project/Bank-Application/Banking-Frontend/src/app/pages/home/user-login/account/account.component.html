@@ -1,0 +1,15 @@
+<div align="center">
+  <h2>💳 Account Management</h2>
+  <p>View and update your account details.</p>
+
+  <h3>📜 Your Transactions:</h3>
+  <ul *ngIf="transactions.length > 0; else noTransactions">
+    <li *ngFor="let transaction of transactions">
+      ₹{{ transaction }}
+    </li>
+  </ul>
+
+  <ng-template #noTransactions>
+    <p>🚫 No transactions available.</p>
+  </ng-template>
+</div>
