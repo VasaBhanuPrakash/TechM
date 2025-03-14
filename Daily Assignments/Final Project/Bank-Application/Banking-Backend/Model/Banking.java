@@ -1,8 +1,12 @@
-package com.example.Model;
+package com.example.model;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import com.example.facility.Facility;
 import com.example.gender.Gender;
 
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
@@ -19,10 +23,10 @@ import lombok.Setter;
 @Table(name="Banking")
 public class Banking {
 	@Id
-	@NotNull(message="ID is required")
+	@NotNull(message="User name is required")
 	String Username;
 	@NotNull(message="Email is required")
-	@Email(message="Give correct Email ID")
+	@Email(message="Provide a valid Email")
 	String email;
 	Gender gender;
 	@NotNull(message="Location is required")
@@ -41,8 +45,27 @@ public class Banking {
 	@NotNull(message="Password is required")
 	@Size(min=8,message="Password should be greater than 8 characters")
 	String Password;
-	double balance;
+	double balance=0;
 	double loanval;
 	double intrest;
-	boolean isEmployee;
+	boolean isEmployee=false;
+	String message;
+	boolean isAdmin;
+	boolean needLoan=false;
+	boolean neededTransaction=false;
+	boolean allowTrans=false;
+	boolean allowLoan=false;
+	float neededLoan;
+	String loanType;
+	boolean freeze=false;
+	int LoanTime;
+	boolean Tchecked=false;
+	boolean Lchecked=false;
+	@ElementCollection
+    List<Double> transaction = new ArrayList<>();
+	List<Double> TransPer= new ArrayList<>();
+    public Banking() {
+        this.transaction=new ArrayList<>();
+        this.TransPer=new ArrayList<>();
+    }
 }
