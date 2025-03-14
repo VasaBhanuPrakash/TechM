@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<bean id="itemBean" class="org.bhanu.ItemDetails">
+<property name="name">
+<value>Laptop</value>
+</property>
+<property name="cost">
+<value>85000</value>
+</property>
+<property name="count">
+<value>6</value>
+</property>
+</bean>
+</beans>

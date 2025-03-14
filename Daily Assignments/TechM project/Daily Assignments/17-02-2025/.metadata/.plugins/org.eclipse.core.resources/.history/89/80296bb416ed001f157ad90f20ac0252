@@ -1,0 +1,13 @@
+package org.bhanu;
+import org.springframework.beans.factory.*;
+import org.springframework.beans.factory.xml.*;
+import org.springframework.core.io.*;
+public class Employee {
+	public static void main(String arg[]) throws Exception{
+		Resource r=new ClassPathResource("config.xml");
+		@SuppressWarnings("deprecation")
+		BeanFactory f=new XmlBeanFactory(r);
+		Employee emp=(Empdetails)f.getBean("empbean");
+		emp.displayValues();
+	}
+}

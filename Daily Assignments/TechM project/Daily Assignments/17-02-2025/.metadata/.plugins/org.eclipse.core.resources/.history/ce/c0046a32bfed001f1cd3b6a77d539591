@@ -1,0 +1,12 @@
+package org.bhanu;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+public class EmpRunner {
+	public static void main(String arg[]) {
+		ApplicationContext a=new ClassPathXmlApplicationContext("config.xml");
+		EmpDao ed=(EmpDao)a.getBean("edao");
+		int status=ed.saveEmployee(new Empdetails(2,"Ravi",56000));
+		System.out.println("Row inserted successfully "+status);
+		
+	}
+}

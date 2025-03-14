@@ -1,0 +1,46 @@
+
+<body style="background: linear-gradient(to bottom, #007bff, #003366);">
+  <h2>Register</h2>
+  <form (ngSubmit)="register()" #registerForm="ngForm">
+    <label>Username:</label>
+    <input type="text" [(ngModel)]="Banking.username" name="username" placeholder="Enter your username" required minlength="3">
+
+    <label>Email:</label>
+    <input type="email" [(ngModel)]="Banking.email" name="email" placeholder="Enter your email" required>
+
+    <label>Gender:</label>
+    <select [(ngModel)]="Banking.gender" name="gender" required>
+      <option value="" disabled selected>Select Gender</option>
+      <option value="Male">Male</option>
+      <option value="Female">Female</option>
+    </select>
+
+    <label>Location:</label>
+    <input type="text" [(ngModel)]="Banking.location" name="location" placeholder="Enter your location" required>
+
+    <label>Nationality:</label>
+    <input type="text" [(ngModel)]="Banking.nationality" name="nationality" placeholder="Enter your nationality" required>
+
+    <label>Account No:</label>
+    <input type="text" [(ngModel)]="Banking.accountNo" name="accountNo" placeholder="Enter account number" required pattern="\d{10}">
+
+    <label>CIF No (11 digits):</label>
+    <input type="number" [(ngModel)]="Banking.cifNo" name="cifNo" placeholder="Enter CIF number" required pattern="\d{11}">
+
+    <label>Branch Code (4-6 digits):</label>
+    <input type="number" [(ngModel)]="Banking.branchCode" name="branchCode" placeholder="Enter branch code" required pattern="\d{4,6}">
+
+    <label>Facility:</label>
+    <select [(ngModel)]="Banking.facility" name="facility" required>
+      <option value="" disabled selected>Select Facility</option>
+      <option value="Full">Full</option>
+      <option value="Limited">Limited</option>
+      <option value="view">View</option>
+    </select>
+
+    <label>Password:</label>
+    <input type="password" [(ngModel)]="Banking.password" name="password" placeholder="Enter your password" required minlength="8">
+
+    <button type="submit" [disabled]="!registerForm.valid">Register</button>
+  </form>
+</body>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+<bean id="StdBean" class="org.bhanu.StudentDetails">
+<constructor-arg value="1" type="int"/>
+<constructor-arg value="Srinivasulu" type="String"/>
+<constructor-arg value="9594954954" type="int"/>
+<constructor-arg value="8.17" type="float"/>
+<constructor-arg value="ClassBean"/>
+
+</bean>
+<bean id="ClassBean" class="org.bhanu.ClassDetails">
+<constructor-arg value="Artificial Intelligence" type="String"/>
+<constructor-arg value="3" type="int"/>
+<constructor-arg value="B" type="String"/>
+</bean>
+</beans>
