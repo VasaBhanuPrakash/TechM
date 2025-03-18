@@ -1,2 +1,0 @@
-INDEX VERSION 1.134+C:\Users\VASA BHANU PRAKASH\eclipse-workspace\TechM\TechM\TechM\Daily Assignments\TechM project\.metadata\.plugins\org.eclipse.jdt.core
-1865797976.index
