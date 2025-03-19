@@ -5,6 +5,7 @@ import { DashboardComponent } from './pages/home/user-login/dashboard/dashboard.
 import { LoginComponent } from './pages/home/user-login/login.component';
 import { RegisterComponent } from './pages/home/register/register.component';
 import { AccountComponent } from './pages/home/user-login/account/account.component';
+import { TransactionComponent } from './pages/home/user-login/transaction/transaction.component';
 import { LoansComponent } from './pages/home/user-login/loans/loans.component';
 import { SupportComponent } from './pages/home/user-login/support/support.component';
 import { HomeComponent } from './pages/home/home.component';
@@ -16,7 +17,7 @@ import { UserManagementComponent } from './pages/home/admin-login/user-managemen
 import { SystemConfigComponent } from './pages/home/admin-login/system-config/system-config.component';
 import { EmployeeAuthGuard } from './guards/employee-auth.guard';
 import { AdminAuthGuard } from './guards/admin-auth.guard';
-
+import { AuthGuard } from './guards/auth.guard';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
@@ -36,6 +37,7 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'account', component: AccountComponent },
+  { path: 'transaction-form', component: TransactionComponent, canActivate: [AuthGuard] },
   { path: 'loans', component: LoansComponent },
   { path: 'support', component: SupportComponent },
   { path: '**', redirectTo: 'login', pathMatch: 'full' },

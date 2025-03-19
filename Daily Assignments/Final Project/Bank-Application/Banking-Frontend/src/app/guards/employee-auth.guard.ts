@@ -8,7 +8,7 @@ export class EmployeeAuthGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(): boolean {
-    const employeeId = localStorage.getItem('employeeId');
+    const employeeId = localStorage.getItem('BankingEmp');
     if (employeeId) {
       return true;
     } else {

@@ -7,8 +7,23 @@ import { Router } from '@angular/router';
   styleUrls: ['./employee-navbar.component.css']
 })
 export class EmployeeNavbarComponent {
+  username: string | null = '';
+
   constructor(private router: Router) {}
 
+  ngOnInit() {
+    this.getUsername();
+  }
+
+  getUsername() {
+    const storedUser = localStorage.getItem('BankingEmp');
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      this.username = user.username || 'Guest';
+    } else {
+      this.username = 'Guest';
+    }
+  }
   navigateTo(path: string) {
     this.router.navigate([path]);
   }

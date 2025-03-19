@@ -24,7 +24,10 @@
 
   <button (click)="login()">Login</button>
 
-
+  <div *ngIf="showOtpField">
+    <input type="text" [(ngModel)]="otp" placeholder="Enter OTP" required>
+    <button (click)="verifyOtp()">Verify OTP</button>
+  </div>
   <div class="register-option">
     <p>New User?</p>
     <button (click)="navigateToRegister()">Register</button>

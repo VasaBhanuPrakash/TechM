@@ -11,10 +11,10 @@ export class AppComponent {
   showAdminNavbar: boolean = false;
   showEmployeeNavbar: boolean = false;
   constructor(private router: Router) {
-  
+
   this.router.events.subscribe(event => {
     if (event instanceof NavigationEnd) {
-      const userRoutes = ['/dashboard', '/account', '/loans', '/support'];
+      const userRoutes = ['/dashboard', '/account', '/support','/transaction-form'];
       const adminRoutes = ['/admin-dashboard', '/user-management', '/system-config'];
       const employeeRoutes = ['/employee-dashboard'];
 

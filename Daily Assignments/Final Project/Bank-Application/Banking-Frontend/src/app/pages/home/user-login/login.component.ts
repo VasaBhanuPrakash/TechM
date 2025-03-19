@@ -12,7 +12,8 @@ export class LoginComponent {
     id: '',
     pass: ''
   };
-
+  otp: string = '';
+  showOtpField: boolean = false;
   constructor(private http: HttpClient, private router: Router) {}
 
   /*async login() {
@@ -41,21 +42,33 @@ export class LoginComponent {
       try {
         const response: any = await this.http.get(`http://localhost:8400/api/banking/login/${this.user.id}/${this.user.pass}`).toPromise();
 
-        if (response.success) {
-
-          localStorage.setItem('Username', this.user.id);
-          localStorage.setItem('UserPass', this.user.pass);
-          localStorage.setItem('Banking', JSON.stringify(response.user));
-
-          localStorage.setItem('userId', response.userId);
-
-
-          this.router.navigate(['/dashboard']);
+        if (response) {
+          alert(`OTP has been sent to your registered email.`);
+          this.showOtpField = true; // Show OTP input field after login
         } else {
-          alert("Error" + response.message);
+          alert("Error: Wrong Username or Password");
         }
       } catch (error) {
         alert("Username or Password Error");
+        console.error("Error:", error);
+      }
+    }
+
+    async verifyOtp() {
+      try {
+        const response: any = await this.http.get(`http://localhost:8400/api/banking/login/${this.user.id}/${this.user.pass}/otp/${this.otp}`).toPromise();
+
+        if (response) {
+          localStorage.setItem('Username', this.user.id);
+          localStorage.setItem('UserPass', this.user.pass);
+          localStorage.setItem('Banking', JSON.stringify(response));
+
+          this.router.navigate(['/dashboard']); // Redirect to dashboard
+        } else {
+          alert("Invalid OTP. Please try again.");
+        }
+      } catch (error) {
+        alert("Invalid OTP. Please try again.");
         console.error("Error:", error);
       }
     }

@@ -1,7 +1,9 @@
 <div class="admin-dashboard">
-  <!-- 🔹 Sidebar Navigation -->
   <aside class="sidebar">
     <div class="logo">🏦 Admin Panel</div>
+    <div class="user-info" *ngIf="username" >
+      <i class="fas fa-user-circle"></i> Admin : {{ username }}
+    </div>
     <ul>
       <li (click)="showSection('overview')" [class.active]="activeSection === 'overview'" >📊 Overview</li>
       <li (click)="showSection('user-management')" [class.active]="activeSection === 'user-management'" >👥 User Management</li>
@@ -11,38 +13,41 @@
     </ul>
   </aside>
 
-  <!-- 🔹 Main Dashboard Content -->
   <main class="dashboard-content">
     <header>
       <h1>Welcome, Admin</h1>
       <p>Monitor & manage the banking system.</p>
     </header>
 
-    <!-- 🔹 Dynamic Sections -->
     <section *ngIf="activeSection === 'overview'">
       <h2>📊 Dashboard Overview</h2>
       <div class="stats-container">
         <div class="stat-box">
           <h3>👥 Users</h3>
-          <p>1,245 Active Users</p>
+          <p>{{ dashboardData.totalUsers || 0 }} Active Users</p>
         </div>
         <div class="stat-box">
-          <h3>💰 Transactions</h3>
-          <p>₹12M Processed</p>
+          <h3>💰 Total Balance</h3>
+          <p>₹{{ dashboardData.totalBalance || 0 }}</p>
         </div>
         <div class="stat-box">
-          <h3>🔍 Audits</h3>
-          <p>37 Security Logs</p>
+          <h3>🏦 Loans Requested</h3>
+          <p>₹{{ dashboardData.totalLoanRequested || 0 }}</p>
+        </div>
+        <div class="stat-box">
+          <h3>✅ Loans Approved</h3>
+          <p>₹{{ dashboardData.totalLoanApproved || 0 }}</p>
         </div>
       </div>
     </section>
+
 
     <section *ngIf="activeSection === 'user-management'">
       <h2>👤 User Management</h2>
       <p>Manage user accounts, roles, and permissions.</p>
       <button class="primary-btn" (click)="navigateToSection('user-management')">View Users</button>
     </section>
-    
+
 
     <section *ngIf="activeSection === 'audit-trails'">
       <h2>📜 Audit Logs</h2>

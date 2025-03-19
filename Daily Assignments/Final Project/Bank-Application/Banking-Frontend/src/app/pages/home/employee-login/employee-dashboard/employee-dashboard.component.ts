@@ -13,6 +13,8 @@ export class EmployeeDashboardComponent implements OnInit {
   loans: any[] = [];
   feedbacks: any[] = [];
   approvals: string[] = [];
+  username: string | null = '';
+
 
   constructor(
     private dashboardService: EmployeeDashboardService,
@@ -32,6 +34,7 @@ export class EmployeeDashboardComponent implements OnInit {
     this.loadLoans();
     this.loadFeedbacks();
     this.loadApprovals();
+    this.getUsername();
   }
 
   navigateToSection(section: string) {
@@ -39,6 +42,15 @@ export class EmployeeDashboardComponent implements OnInit {
     this.router.navigate(['/employee-dashboard', section]);
   }
 
+  getUsername() {
+    const storedUser = localStorage.getItem('BankingEmp');
+    if (storedUser) {
+      const user = JSON.parse(storedUser);
+      this.username = user.username || 'Guest';
+    } else {
+      this.username = 'Guest';
+    }
+  }
 
   loadUsers() {
     this.dashboardService.getAllUsers().subscribe({

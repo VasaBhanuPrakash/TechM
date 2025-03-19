@@ -23,6 +23,7 @@ import { UserManagementComponent } from './pages/home/admin-login/user-managemen
 import { SystemConfigComponent } from './pages/home/admin-login/system-config/system-config.component';
 import { EmployeeNavbarComponent } from './components/employee-navbar/employee-navbar.component';
 import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.component';
+import { TransactionComponent } from './pages/home/user-login/transaction/transaction.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { AdminNavbarComponent } from './components/admin-navbar/admin-navbar.com
     UserManagementComponent,
     SystemConfigComponent,
     EmployeeNavbarComponent,
-    AdminNavbarComponent
+    AdminNavbarComponent,
+    TransactionComponent
   ],
   imports: [
     BrowserModule,

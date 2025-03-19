@@ -9,7 +9,7 @@ export class AdminAuthGuard implements CanActivate {
   constructor(private router: Router) {}
 
   canActivate(): boolean {
-    const adminId = localStorage.getItem('adminId');
+    const adminId = localStorage.getItem('Banking');
 
     if (adminId) {
       return true;

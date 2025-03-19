@@ -2,6 +2,9 @@
 
   <header>
     <h1>👨‍💼 Employee Dashboard</h1>
+    <div class="user-info" *ngIf="username" >
+      <i class="fas fa-user-circle"></i> Employee : {{ username }}
+    </div>
     <button class="logout-btn" (click)="logout()">🚪 Logout</button>
   </header>
 
