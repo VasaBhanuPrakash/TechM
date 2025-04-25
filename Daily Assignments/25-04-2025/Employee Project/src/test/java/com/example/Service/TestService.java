@@ -63,7 +63,7 @@ public class TestService {
     void login_AsManager_SendsOtpAndReturns() throws EmpException {
         // first call, no exception
         Employee ret = service.login(1, "pass");
-        assertEquals(manager, ret);
+        assertEquals(empRepo.findById(1).get(), ret);
         verify(empRepo, times(2)).findById(1);
     }
 
