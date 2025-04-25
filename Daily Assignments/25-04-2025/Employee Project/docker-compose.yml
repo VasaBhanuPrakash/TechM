@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: mysql-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: Vbhanu@2003
+      MYSQL_DATABASE: bhanu
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+  app:
+    build: .
+    container_name: employee-project
+    ports:
+      - "8383:8383"
+    depends_on:
+      - mysql
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-db:3306/bhanu
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: Vbhanu@2003
+    networks:
+      - ems-network
+
+volumes:
+  mysql-data:
+
+networks:
+  ems-network:

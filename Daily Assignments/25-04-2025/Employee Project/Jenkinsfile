@@ -1,0 +1,29 @@
+pipeline {
+    agent any
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    // Run Maven build
+                    sh 'mvn clean install'
+                }
+            }
+        }
+        stage('Test') {
+            steps {
+                script {
+                    // Run tests
+                    sh 'mvn test'
+                }
+            }
+        }
+        stage('Deploy') {
+            steps {
+                script {
+                    // Deploy to your server (or container, etc.)
+                    sh 'mvn spring-boot:run'
+                }
+            }
+        }
+    }
+}
